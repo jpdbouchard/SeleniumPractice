@@ -1,0 +1,26 @@
+package testpack;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class FirefoxTests {
+
+	public static void main(String[] args) {
+		String baseURL = "http://www.google.ca";
+		System.setProperty("webdriver.gecko.driver", "C:\\Users\\JP\\eclipse-workspace\\geckodriver.exe");
+		
+		WebDriver driver;
+		driver = new FirefoxDriver();
+		driver.manage().window().maximize();
+		driver.get(baseURL);
+		driver.findElement(By.id("lst-ib")).sendKeys("freshworks.io");
+		driver.findElement(By.name("btnK")).click();
+		driver.findElement(By.linkText("FreshWorks")).click();
+		//driver.findElement(By.)
+		
+		driver.quit(); //close the browser window
+		
+	}
+}
